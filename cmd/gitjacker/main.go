@@ -49,8 +49,9 @@ https://github.com/liamg/gitjacker                      %9s
 `, version.Version)
 
 		rawURL := args[0]
-		rawURL = strings.TrimSuffix(rawURL, "/.git/")
-		rawURL = strings.TrimSuffix(rawURL, "/.git")
+		//Allow dumping of custom .git_names_folders 
+		//rawURL = strings.TrimSuffix(rawURL, "/.git/")
+		//rawURL = strings.TrimSuffix(rawURL, "/.git")
 
 		u, err := url.Parse(rawURL)
 		if err != nil {

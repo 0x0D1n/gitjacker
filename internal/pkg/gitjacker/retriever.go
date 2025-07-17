@@ -90,7 +90,7 @@ type Branch struct {
 
 func New(target *url.URL, outputDir string) *retriever {
 
-	relative, _ := url.Parse(".git/")
+	relative, _ := url.Parse("") // Removed to allow custom .git_folder_name
 	target = target.ResolveReference(relative)
     customTransport := http.DefaultTransport.(*http.Transport).Clone()
     customTransport.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
